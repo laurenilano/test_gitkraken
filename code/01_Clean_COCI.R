@@ -1,4 +1,5 @@
 library(tidyverse)
+library(here)
 
 COCI <- read_csv("data/COCI-Program-Export-2023-09-12.csv") %>%
   rename(Program_Control_Number = "CONTROL NUMBER") %>%
@@ -20,7 +21,7 @@ pcn_top_xwalk <- COCI %>%
   select(Program_Control_Number, TOP_CODE, TOP_DESC) %>%
   distinct()
 
-write_csv(pcn_top_xwalk, "Out/pcn_top_xwalk_20230912.csv")
+write_csv(pcn_top_xwalk, "out/pcn_top_xwalk_20230912.csv")
 
 # TOP DESC
 top_codes <- COCI %>%
@@ -28,8 +29,12 @@ top_codes <- COCI %>%
   mutate(TOP_CODE_STRING = gsub("\\.", "", TOP_CODE)) %>%
   distinct(TOP_CODE, .keep_all = TRUE)
 
+<<<<<<< four-digit-tops
 write_csv(top_codes, "Out/top_codes_20230912.csv")
 
+=======
+write_csv(top_codes, "out/top_codes_20230912.csv")
+>>>>>>> get TOP Code crosswalks
 
 # 4-digit TOP
 top4_codes <- COCI %>%
@@ -39,3 +44,7 @@ top4_codes <- COCI %>%
   mutate(TOP_CODE_STRING = gsub("\\.", "", TOP_CODE))
 
 write_csv(top_codes, "out/top4_codes_20230912.csv")
+<<<<<<< four-digit-tops
+=======
+  
+>>>>>>> get TOP Code crosswalks
