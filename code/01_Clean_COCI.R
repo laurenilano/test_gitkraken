@@ -1,8 +1,6 @@
-setwd("~/Dropbox/MMAP/Data/COCI Major")
-
 library(tidyverse)
 
-COCI <- read_csv("COCI-Program-Export-2023-09-12.csv") %>%
+COCI <- read_csv("data/COCI-Program-Export-2023-09-12.csv") %>%
   rename(Program_Control_Number = "CONTROL NUMBER") %>%
   mutate(TOP_CODE = gsub("[^0-9.-]", "", `TOP CODE`),
          TOP_DESC = gsub("[0-9].[0-9]", "", `TOP CODE`),
