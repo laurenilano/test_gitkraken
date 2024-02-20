@@ -20,7 +20,6 @@ COCI <- read_csv("data/COCI-Program-Export-2023-09-12.csv") %>%
 pcn_top_xwalk <- COCI %>%
   select(Program_Control_Number, TOP_CODE, TOP_DESC) %>%
   distinct()
-
 write_csv(pcn_top_xwalk, "out/pcn_top_xwalk_20230912.csv")
 
 # TOP DESC
@@ -28,7 +27,6 @@ top_codes <- COCI %>%
   select(TOP_CODE, TOP_DESC) %>%
   mutate(TOP_CODE_STRING = gsub("\\.", "", TOP_CODE)) %>%
   distinct(TOP_CODE, .keep_all = TRUE)
-
 write_csv(top_codes, "out/top_codes_20230912.csv")
 
 
@@ -38,6 +36,5 @@ top4_codes <- COCI %>%
   distinct(TOP_CODE, .keep_all = TRUE) %>%
   filter(grepl("*.00", TOP_CODE)) %>%
   mutate(TOP_CODE_STRING = gsub("\\.", "", TOP_CODE))
-
 write_csv(top_codes, "out/top4_codes_20230912.csv")
 
