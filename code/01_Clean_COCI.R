@@ -29,3 +29,13 @@ top_codes <- COCI %>%
   distinct(TOP_CODE, .keep_all = TRUE)
 
 write_csv(top_codes, "Out/top_codes_20230912.csv")
+
+
+# 4-digit TOP
+top4_codes <- COCI %>%
+  select(TOP_CODE, TOP_DESC) %>%
+  distinct(TOP_CODE, .keep_all = TRUE) %>%
+  filter(grepl("*.00", TOP_CODE)) %>%
+  mutate(TOP_CODE_STRING = gsub("\\.", "", TOP_CODE))
+
+write_csv(top_codes, "out/top4_codes_20230912.csv")
