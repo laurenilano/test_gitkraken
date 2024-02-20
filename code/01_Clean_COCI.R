@@ -36,6 +36,7 @@ write_csv(top_codes, "Out/top_codes_20230912.csv")
 write_csv(top_codes, "out/top_codes_20230912.csv")
 >>>>>>> get TOP Code crosswalks
 
+<<<<<<< four-digit-tops
 # 4-digit TOP
 top4_codes <- COCI %>%
   select(TOP_CODE, TOP_DESC) %>%
@@ -46,5 +47,7 @@ top4_codes <- COCI %>%
 write_csv(top_codes, "out/top4_codes_20230912.csv")
 <<<<<<< four-digit-tops
 =======
+=======
+>>>>>>> remove four digit
   
 >>>>>>> get TOP Code crosswalks
